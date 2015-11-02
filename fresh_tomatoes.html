@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fresh Tomatoes!</title>
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile:hover {
+            background-color: #EEE;
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="RyMSRRNHRos" data-toggle="modal" data-target="#trailer">
+    <h2>The Zero Theorem</h2>
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTc4NTIxMTE0OF5BMl5BanBnXkFtZTgwNTQ5NTYxMjE@._V1_SX640_SY720_.jpg" width="220" height="342">
+    <br>
+    <br>
+    <p>A reclusive computer genius working on a formula to determine whether life holds any meaning.</p>
+    <strong>1h 47m</strong>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="48iCNTicD3o" data-toggle="modal" data-target="#trailer">
+    <h2>Hook</h2>
+    <img src="http://ia.media-imdb.com/images/M/MV5BMTU2MzYzOTQyMF5BMl5BanBnXkFtZTcwNDM2NDU2MQ@@._V1_SX640_SY720_.jpg" width="220" height="342">
+    <br>
+    <br>
+    <p>What if Peter Pan grew up?</p>
+    <strong>2h 24m</strong>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="Pa7oVPru4J8" data-toggle="modal" data-target="#trailer">
+    <h2>The City of Lost Children</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/en/4/40/City_of_lost_children_french_movie_poster.jpg" width="220" height="342">
+    <br>
+    <br>
+    <p>A scientist in a surrealist society kidnaps children to steal their dreams, hoping that they slow his aging process.</p>
+    <strong>1h 52m</strong>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="M3YVTgTl-F0" data-toggle="modal" data-target="#trailer">
+    <h2>Big Fish</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/en/3/35/Big-fish-movie-poster.jpg" width="220" height="342">
+    <br>
+    <br>
+    <p>A son tries to learn more about his dying father by reliving stories and myths he told about his life.</p>
+    <strong>2h 5m</strong>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="TPZpQsEFcKI" data-toggle="modal" data-target="#trailer">
+    <h2>What Dreams May Come</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/91/Whatdreamsposter.jpeg" width="220" height="342">
+    <br>
+    <br>
+    <p>After dying in a car crash a man searches the afterlife for his wife.</p>
+    <strong>1h 56m</strong>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="UeFni9dOv7c" data-toggle="modal" data-target="#trailer">
+    <h2>The NeverEnding Story</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/9b/Neverendingstoryposter.jpg" width="220" height="342">
+    <br>
+    <br>
+    <p>A troubled boy dives into a wonderous fantasy world through the pages of a mysterious book.</p>
+    <strong>1h 47m</strong>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="Gg3pSz-P7IE" data-toggle="modal" data-target="#trailer">
+    <h2>The NeverEnding Story II: The Next Chapter</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/en/8/87/Neverending_story_two_poster.jpg" width="220" height="342">
+    <br>
+    <br>
+    <p>A young boy with a distant father enters a world of make-believe and magic through a portal within an antique book.</p>
+    <strong>1h 30m</strong>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="wr6N_hZyBCk" data-toggle="modal" data-target="#trailer">
+    <h2>The Nightmare Before Christmas</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/9a/The_nightmare_before_christmas_poster.jpg" width="220" height="342">
+    <br>
+    <br>
+    <p>Jack Skellington, king of Halloween Town, discovers Christmas Town, but doesn't quite understand the concept.</p>
+    <strong>1h 16m</strong>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="s2nt9yU1vEU" data-toggle="modal" data-target="#trailer">
+    <h2>The Adventures of Baron Munchausen</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/en/3/3d/Adventures_of_baron_munchausen.jpg" width="220" height="342">
+    <br>
+    <br>
+    <p>An account of Baron Munchausen's supposed travels and fantastical experiences with his band of misfits.</p>
+    <strong>2h 7m</strong>
+</div>
+
+    </div>
+  </body>
+</html>
