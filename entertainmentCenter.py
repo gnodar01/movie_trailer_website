@@ -75,8 +75,9 @@ hook = media.Movie(
     "2h 24m")
 
 # List of movies for the HTML generator
-movies = [zero_theorem, hook, lost_children, big_fish, dreams_may_come,
- neverending_story, neverending_story_ii, nightmare_before_christmas, munchausen]
+movies = [zero_theorem, hook, lost_children, 
+          big_fish, dreams_may_come, neverending_story, 
+          neverending_story_ii, nightmare_before_christmas, munchausen]
 
 # Takes in list of movies, generates HTML, and opens in browser
 fresh_tomatoes.open_movies_page(movies)
