@@ -2,6 +2,11 @@ import webbrowser
 
 
 class Movie():
+    '''The Movie class takes in movie title, movie storyline, 
+    a link for poster image, youtube trailer link and movie 
+    duration. There is a show_trailer instance method, which 
+    will open the youtube link in a browswer when called.'''
+
     def __init__(self, movie_title, movie_storyline, 
                  poster_image, trailer_youtube, movie_duration):
         self.title = movie_title
