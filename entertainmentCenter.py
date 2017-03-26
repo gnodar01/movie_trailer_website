@@ -41,7 +41,7 @@ big_fish = media.Movie(
     "Big Fish",
     "A son tries to learn more about his dying father by reliving \
     stories and myths he told about his life.",
-    "https://upload.wikimedia.org/wikipedia/en/3/35/Big-fish-movie-poster.jpg",  # noqa
+    "https://upload.wikimedia.org/wikipedia/en/4/41/Big_Fish_movie_poster.png",  # noqa
     "https://www.youtube.com/watch?v=M3YVTgTl-F0",
     "2h 5m")
 
